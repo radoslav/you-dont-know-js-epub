@@ -3,6 +3,11 @@ git submodule init
 git submodule update --remote --merge
 ```
 
+```bash
+podman build -t ydkjs-epub:latest -f Dockerfile .
+podman run --rm -it -v /home/radoslav/tmp:/root/output:Z localhost/ydkjs-epub:latest
+```
+
 
 # you-dont-know-js-epub
 

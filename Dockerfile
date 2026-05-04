@@ -1,5 +1,5 @@
-FROM pandoc/core:2.9.2
-RUN apk add --update --no-cache ttf-dejavu
+FROM pandoc/core:3-ubuntu
+RUN apt-get update && apt-get install -y --no-install-recommends fonts-dejavu-core && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /root
 COPY . .
