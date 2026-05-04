@@ -6,7 +6,7 @@
 mkdir -p output
 
 ROOT_DIR=$PWD
-FONT_PATH=/usr/share/fonts/ttf-dejavu/DejaVuSansMono.ttf
+FONT_PATH=/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf
 
 TITLE="You Don't Know JS Yet"
 AUTHOR="Kyle Simpson"
@@ -35,7 +35,7 @@ pandoc -f markdown+smart -o "$ROOT_DIR/output/$TITLE - $BOOK1.epub" \
   --epub-cover-image=images/cover.png \
   --epub-embed-font=$FONT_PATH \
   --css=$ROOT_DIR/epub.css \
-  --no-highlight \
+  --syntax-highlighting=pygments \
   -M author="$AUTHOR" \
   -M title="$TITLE: $BOOK1" \
   foreword.md \
@@ -54,7 +54,7 @@ pandoc -f markdown+smart -o "$ROOT_DIR/output/$TITLE - $BOOK2.epub" \
   --epub-cover-image=images/cover.png \
   --epub-embed-font=$FONT_PATH \
   --css=$ROOT_DIR/epub.css \
-  --no-highlight \
+  --syntax-highlighting=pygments \
   -M author="$AUTHOR" \
   -M title="$TITLE: $BOOK2" \
   foreword.md \
@@ -72,100 +72,100 @@ pandoc -f markdown+smart -o "$ROOT_DIR/output/$TITLE - $BOOK2.epub" \
 cd ..
 
 
-# ==== NOTE: the 4 books below are from the 1st edition ====
+# # ==== NOTE: the 4 books below are from the 1st edition ====
 
-cd $ROOT_DIR/1st-edition
+# cd $ROOT_DIR/1st-edition
 
-TITLE="You Don't Know JS"
+# TITLE="You Don't Know JS"
 
-BOOK3="this & Object Prototypes"
-BOOK4="Types & Grammar"
-BOOK5="Async & Performance"
-BOOK6="ES6 & Beyond"
+# BOOK3="this & Object Prototypes"
+# BOOK4="Types & Grammar"
+# BOOK5="Async & Performance"
+# BOOK6="ES6 & Beyond"
 
-echo "Generating: $BOOK3..."
-cd "this & object prototypes"
-pandoc -f markdown+smart -o "$ROOT_DIR/output/$TITLE - $BOOK3.epub" \
-  --epub-cover-image=cover.jpg \
-  --epub-embed-font=$FONT_PATH \
-  --css=$ROOT_DIR/epub.css \
-  --no-highlight \
-  -M author="$AUTHOR" \
-  -M title="$TITLE: $BOOK3" \
-  foreword.md \
-  ../preface.md \
-  ch1.md \
-  ch2.md \
-  ch3.md \
-  ch4.md \
-  ch5.md \
-  ch6.md \
-  apA.md \
-  apB.md
-cd ..
+# echo "Generating: $BOOK3..."
+# cd "this & object prototypes"
+# pandoc -f markdown+smart -o "$ROOT_DIR/output/$TITLE - $BOOK3.epub" \
+#   --epub-cover-image=cover.jpg \
+#   --epub-embed-font=$FONT_PATH \
+#   --css=$ROOT_DIR/epub.css \
+#   --syntax-highlighting=pygments \
+#   -M author="$AUTHOR" \
+#   -M title="$TITLE: $BOOK3" \
+#   foreword.md \
+#   ../preface.md \
+#   ch1.md \
+#   ch2.md \
+#   ch3.md \
+#   ch4.md \
+#   ch5.md \
+#   ch6.md \
+#   apA.md \
+#   apB.md
+# cd ..
 
-echo "Generating: $BOOK4..."
-cd "types & grammar"
-pandoc -f markdown+smart -o "$ROOT_DIR/output/$TITLE - $BOOK4.epub" \
-  --epub-cover-image=cover.jpg \
-  --epub-embed-font=$FONT_PATH \
-  --css=$ROOT_DIR/epub.css \
-  --no-highlight \
-  -M author="$AUTHOR" \
-  -M title="$TITLE: $BOOK4" \
-  foreword.md \
-  ../preface.md \
-  ch1.md \
-  ch2.md \
-  ch3.md \
-  ch4.md \
-  ch5.md \
-  apA.md \
-  apB.md
-cd ..
+# echo "Generating: $BOOK4..."
+# cd "types & grammar"
+# pandoc -f markdown+smart -o "$ROOT_DIR/output/$TITLE - $BOOK4.epub" \
+#   --epub-cover-image=cover.jpg \
+#   --epub-embed-font=$FONT_PATH \
+#   --css=$ROOT_DIR/epub.css \
+#   --syntax-highlighting=pygments \
+#   -M author="$AUTHOR" \
+#   -M title="$TITLE: $BOOK4" \
+#   foreword.md \
+#   ../preface.md \
+#   ch1.md \
+#   ch2.md \
+#   ch3.md \
+#   ch4.md \
+#   ch5.md \
+#   apA.md \
+#   apB.md
+# cd ..
 
-echo "Generating: $BOOK5..."
-cd "async & performance"
-pandoc -f markdown+smart -o "$ROOT_DIR/output/$TITLE - $BOOK5.epub" \
-  --epub-cover-image=cover.jpg \
-  --epub-embed-font=$FONT_PATH \
-  --css=$ROOT_DIR/epub.css \
-  --no-highlight \
-  -M author="$AUTHOR" \
-  -M title="$TITLE: $BOOK5" \
-  foreword.md \
-  ../preface.md \
-  ch1.md \
-  ch2.md \
-  ch3.md \
-  ch4.md \
-  ch5.md \
-  ch6.md \
-  apA.md \
-  apB.md \
-  apC.md
-cd ..
+# echo "Generating: $BOOK5..."
+# cd "async & performance"
+# pandoc -f markdown+smart -o "$ROOT_DIR/output/$TITLE - $BOOK5.epub" \
+#   --epub-cover-image=cover.jpg \
+#   --epub-embed-font=$FONT_PATH \
+#   --css=$ROOT_DIR/epub.css \
+#   --syntax-highlighting=pygments \
+#   -M author="$AUTHOR" \
+#   -M title="$TITLE: $BOOK5" \
+#   foreword.md \
+#   ../preface.md \
+#   ch1.md \
+#   ch2.md \
+#   ch3.md \
+#   ch4.md \
+#   ch5.md \
+#   ch6.md \
+#   apA.md \
+#   apB.md \
+#   apC.md
+# cd ..
 
-echo "Generating: $BOOK6..."
-cd "es6 & beyond"
-pandoc -f markdown+smart -o "$ROOT_DIR/output/$TITLE - $BOOK6.epub" \
-  --epub-cover-image=cover.jpg \
-  --epub-embed-font=$FONT_PATH \
-  --css=$ROOT_DIR/epub.css \
-  --no-highlight \
-  -M author="$AUTHOR" \
-  -M title="$TITLE: $BOOK6" \
-  foreword.md \
-  ../preface.md \
-  ch1.md \
-  ch2.md \
-  ch3.md \
-  ch4.md \
-  ch5.md \
-  ch6.md \
-  ch7.md \
-  ch8.md \
-  apA.md
-cd ..
+# echo "Generating: $BOOK6..."
+# cd "es6 & beyond"
+# pandoc -f markdown+smart -o "$ROOT_DIR/output/$TITLE - $BOOK6.epub" \
+#   --epub-cover-image=cover.jpg \
+#   --epub-embed-font=$FONT_PATH \
+#   --css=$ROOT_DIR/epub.css \
+#   --syntax-highlighting=pygments \
+#   -M author="$AUTHOR" \
+#   -M title="$TITLE: $BOOK6" \
+#   foreword.md \
+#   ../preface.md \
+#   ch1.md \
+#   ch2.md \
+#   ch3.md \
+#   ch4.md \
+#   ch5.md \
+#   ch6.md \
+#   ch7.md \
+#   ch8.md \
+#   apA.md
+# cd ..
 
 echo "Done."

@@ -5,7 +5,7 @@ git submodule update --remote --merge
 
 ```bash
 podman build -t ydkjs-epub:latest -f Dockerfile .
-podman run --rm -it -v /home/radoslav/tmp:/root/output:Z localhost/ydkjs-epub:latest
+podman run --rm -it -v $PWD/output:/root/output:Z localhost/ydkjs-epub:latest
 ```
 
 
