@@ -1,3 +1,9 @@
+```bash
+git submodule init
+git submodule update --remote --merge
+```
+
+
 # you-dont-know-js-epub
 
 "You Don't Know JS Yet" (1st/2nd editions) ePub generator.
